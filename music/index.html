@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="audio-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <div class="container center_circle">
+        <div class="circle1"></div>
+        <div class="circle">
+            <div class="circle2" id="circle"></div>
+        </div>
+        <div class="circle3"></div>
+        <div class="circle4"></div>
+        <div class="center_rect" id="rect">
+            <div class="rect"></div>
+            <div class="rect2"></div>
+        </div>
+        <button onclick="playAudio()" class="btn1"></button>
+        <button onclick="pauseAudio()" class="btn2"></button>
+        <button onclick="stopAudio()" class="btn3"></button>
+    </div>
+
+    <div class="slidershow middle">
+
+        <div class="slides">
+            <input type="radio" name="r" id="r1">
+            <input type="radio" name="r" id="r2">
+            <input type="radio" name="r" id="r3">
+            <input type="radio" name="r" id="r4">
+            <div class="slide s1">
+                <p>Musique 1 <br> Rick Astley - Never Gonna Give You Up</p>
+            </div>
+            <div class="slide">
+                <p>Musique 2 <br> Imagine Dragons & JID - Enemy </p>
+            </div>
+            <div class="slide">
+                <p>Musique 3 <br> Le Wanski - Tarte à la myrtille </p>
+            </div>
+            <div class="slide">
+                <p>Musique 4 <br> Yumzv - Reine des enfers </p>
+            </div>
+        </div>
+
+        <div class="navigation">
+            <label for="r1" class="bar" onclick="setMusic('mr1')"></label>
+            <label for="r2" class="bar" onclick="setMusic('mr2')"></label>
+            <label for="r3" class="bar" onclick="setMusic('mr3')"></label>
+            <label for="r4" class="bar" onclick="setMusic('mr4')"></label>
+        </div>
+    </div>
+
+    <audio id="mr1" src="music1.mp3" type="audio/mpeg"></audio>
+    <audio id="mr2" src="music2.mp3" type="audio/mpeg"></audio>
+    <audio id="mr3" src="music3.mp3" type="audio/mpeg"></audio>
+    <audio id="mr4" src="music4.mp3" type="audio/mpeg"></audio>
+
+
+    <script>
+
+        let audio = document.getElementById("mr1");
+        var paused = false;
+        var inplay = false;
+        function setMusic(id) {
+            audio.pause();
+            audio = document.getElementById(id);
+
+            if (!inplay) {
+                playAudio();
+                inplay = true;
+            } else {
+                setTimeout(function () {
+                    audio.volume = 0.5;
+                    audio.play();
+                }, 250)
+            }
+        }
+
+        var rect = document.getElementById("rect");
+        var circle = document.getElementById("circle");
+
+        function playAudio() {
+            rect.classList.add("playAudio");
+            circle.classList.add("swing");
+            setTimeout(function () {
+                audio.volume = 0.2;
+                audio.play();
+            }, 2500);
+        }
+
+        function pauseAudio() {
+            if (paused) {
+                paused = false;
+                audio.play();
+            } else {
+                paused = true;
+                audio.pause();
+            }
+        }
+
+
+        function stopAudio() {
+
+            audio.pause();
+            audio.currentTime = 0;
+            rect.classList.add("stopAudio");
+            inplay = false;
+
+            setTimeout(function () {
+                rect.classList.remove("stopAudio");
+                rect.classList.remove("playAudio");
+                circle.classList.remove("swing");
+
+            }, 3000);
+        } 
+    </script>
+
+</body>
+
+</html>

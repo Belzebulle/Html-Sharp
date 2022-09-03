@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=1">
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container"></div>
+    
+    <div class="around_cursor2"></div>
+    <div class="around_cursor1"></div>
+    <div class="cursor"></div>
+
+    <script>
+        var cursor = document.querySelector(".cursor");
+        var around_cursor1 = document.querySelector(".around_cursor1");
+        var around_cursor2 = document.querySelector(".around_cursor2");
+
+        document.addEventListener("mousemove", function(e){
+            cursor.style.cssText = "left: " + (e.clientX-75) + "px; top: " + (e.clientY-75) +"px;";
+            around_cursor1.style.cssText = "left: " + (e.clientX-125) + "px; top: " + (e.clientY-125) +"px;";
+            around_cursor2.style.cssText = "left: " + (e.clientX-150) + "px; top: " + (e.clientY-150) +"px;";
+            
+
+        })
+    </script>
+</body>
+
+</html>
