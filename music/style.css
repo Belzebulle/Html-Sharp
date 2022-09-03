@@ -154,7 +154,6 @@ body {
     animation: swing 5s linear infinite;
 }
 
-
 @keyframes playAudio {
     to {
         rotate: 30deg;

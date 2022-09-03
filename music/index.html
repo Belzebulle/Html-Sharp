@@ -16,7 +16,7 @@
     <div class="container center_circle">
         <div class="circle1"></div>
         <div class="circle">
-            <div class="circle2 disc" id="circle"></div>
+            <div class="circle2" id="circle"></div>
         </div>
         <div class="circle3"></div>
         <div class="circle4"></div>
@@ -71,7 +71,27 @@
         var inplay = false;
         function setMusic(id) {
             audio.pause();
+            audio.currentTime = 0;
             audio = document.getElementById(id);
+
+            switch (id) {
+                case "mr1":
+                    document.querySelector(".circle2").style.cssText = "background : var(--gradient-grey);";
+                    break;
+                case "mr2":
+                    document.querySelector(".circle2").style.cssText = "background : var(--gradient-blue);";
+                    break;
+                case "mr3":
+                    document.querySelector(".circle2").style.cssText = "background : var(--gradient-purple);";
+                    break;
+                case "mr4":
+                    document.querySelector(".circle2").style.cssText = "background : var(--gradient-red);";
+                    break;
+            
+                default:
+                    document.querySelector(".circle2").style.cssText = "background : var(--gradient-grey);";
+                    break;
+            }
 
             if (!inplay) {
                 playAudio();
