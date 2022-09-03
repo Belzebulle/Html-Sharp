@@ -3,9 +3,9 @@
     --cream: rgb(187, 178, 158);
 
     --gradient-grey: linear-gradient(90deg, rgb(113, 114, 114) 0%, var(--grey) 50%, rgb(113, 114, 114) 100%);
-    --gradient-red: linear-gradient(90deg, rgb(40, 0, 0) 0%, rgb(155, 0, 0) 50%, rgb(45, 0, 0) 100%);
-    --gradient-blue: linear-gradient(90deg, rgb(0, 0, 40) 0%, rgb(0, 0, 155) 50%, rgb(0, 0, 45) 100%);
-    --gradient-purple: linear-gradient(90deg, rgb(40, 0, 40) 0%, rgb(155, 0, 155) 50%, rgb(45, 0, 45) 100%);
+    --gradient-red: linear-gradient(90deg, rgb(20, 0, 0) 0%, rgb(100, 0, 0) 50%, rgb(20, 0, 0) 100%);
+    --gradient-blue: linear-gradient(90deg, rgb(0, 0, 20) 0%, rgb(0, 0, 100) 50%, rgb(0, 0, 20) 100%);
+    --gradient-purple: linear-gradient(90deg, rgb(20, 0, 20) 0%, rgb(100, 0, 100) 50%, rgb(20, 0, 20) 100%);
 }
 
 body {
