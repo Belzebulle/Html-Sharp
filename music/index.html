@@ -6,12 +6,11 @@
     <meta http-equiv="audio-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
     <title>Document</title>
 </head>
 
 <body>
-
-
 
     <div class="container center_circle">
         <div class="circle1"></div>
@@ -62,85 +61,6 @@
     <audio id="mr2" src="music2.mp3" type="audio/mpeg"></audio>
     <audio id="mr3" src="music3.mp3" type="audio/mpeg"></audio>
     <audio id="mr4" src="music4.mp3" type="audio/mpeg"></audio>
-
-
-    <script>
-
-        let audio = document.getElementById("mr1");
-        var paused = false;
-        var inplay = false;
-        function setMusic(id) {
-            audio.pause();
-            audio.currentTime = 0;
-            audio = document.getElementById(id);
-
-            switch (id) {
-                case "mr1":
-                    document.querySelector(".circle2").style.cssText = "background : var(--gradient-grey);";
-                    break;
-                case "mr2":
-                    document.querySelector(".circle2").style.cssText = "background : var(--gradient-blue);";
-                    break;
-                case "mr3":
-                    document.querySelector(".circle2").style.cssText = "background : var(--gradient-purple);";
-                    break;
-                case "mr4":
-                    document.querySelector(".circle2").style.cssText = "background : var(--gradient-red);";
-                    break;
-                default:
-                    document.querySelector(".circle2").style.cssText = "background : var(--gradient-grey);";
-                    break;
-            }
-
-            if (!inplay) {
-                playAudio();
-                inplay = true;
-            } else {
-                setTimeout(function () {
-                    audio.volume = 0.5;
-                    audio.play();
-                }, 250)
-            }
-        }
-
-        var rect = document.getElementById("rect");
-        var circle = document.getElementById("circle");
-
-        function playAudio() {
-            rect.classList.add("playAudio");
-            circle.classList.add("swing");
-            setTimeout(function () {
-                audio.volume = 0.2;
-                audio.play();
-            }, 2500);
-        }
-
-        function pauseAudio() {
-            if (paused) {
-                paused = false;
-                audio.play();
-            } else {
-                paused = true;
-                audio.pause();
-            }
-        }
-
-
-        function stopAudio() {
-
-            audio.pause();
-            audio.currentTime = 0;
-            rect.classList.add("stopAudio");
-            inplay = false;
-
-            setTimeout(function () {
-                rect.classList.remove("stopAudio");
-                rect.classList.remove("playAudio");
-                circle.classList.remove("swing");
-
-            }, 3000);
-        } 
-    </script>
 
 </body>
 
