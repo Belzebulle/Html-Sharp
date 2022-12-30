@@ -34,7 +34,6 @@ body {
     top: 60%;
     animation: affichage 3s ease calc(var(--typewriterSpeed) + 2s) forwards;
     width: 500px;
-    
 }
 
 h1::before,

@@ -4,7 +4,6 @@ const volume = 0.2;
 
 let rect, circle, audio;
 
-// function on ready to set variables js classic
 document.addEventListener("DOMContentLoaded", function () {
     rect = document.getElementById("rect");
     circle = document.getElementById("circle");
