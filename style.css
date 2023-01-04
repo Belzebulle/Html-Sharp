@@ -36,12 +36,44 @@ ol li::before {
     height: 100%;
     z-index: -1;
     transition: all .4s;
-    background: #4285f4;
 }
 
 ol li:hover::before {
     width: 100%;
 }
+
+ol a:nth-child(1) li::before {
+    background: #ff6961;
+}
+
+ol a:nth-child(2) li::before {
+    background: #ffb480;
+}
+
+ol a:nth-child(3) li::before {
+    background: #f8f38d;
+}
+
+ol a:nth-child(4) li::before {
+    background: #42d6a4;
+}
+
+ol a:nth-child(5) li::before {
+    background: #08cad1;
+}
+
+ol a:nth-child(6) li::before {
+    background: #59adf6;
+}
+
+ol a:nth-child(7) li::before {
+    background: #9d94ff;
+}
+
+ol a:nth-child(8) li::before {
+    background: #c780e8;
+}
+
 
 ol li:hover {
     transform: translateX(20px);
